@@ -1,6 +1,6 @@
 "use strict";
 // let spacer = require("./spacer");
-import {spacer} from "./spacer.js";
+// import {spacer} from "./spacer.js";
 
 let Place = function Place(title, description) {
     const newLine = spacer.newLine();
@@ -57,8 +57,8 @@ let Place = function Place(title, description) {
 
     // Display the information to the console
     this.showInfo = function () {
-        console.log(getInfo());
-        //return getInfo();
+        //console.log(getInfo());
+        return getInfo();
     };
 
     // Add an item to the list or items in theis place
@@ -98,4 +98,4 @@ let Place = function Place(title, description) {
 };
 
 // module.exports = Place;
-export {Place};
+// export {Place};

@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Crypt Game</title>
-    <script src="game.js" type="module"></script>
+    <script src="spacer.js" type="text/javascript"></script>
+    <script src="player.js" type="text/javascript"></script>
+    <script src="place.js" type="text/javascript"></script>
+    <script src="game.js" type="text/javascript"></script>
 </head>
 <body>
     <h1>The Crypt</h1>
-    <div id="textarea">
-    </div>
+    <textarea id="textarea" cols="80" rows="60">
+        <script>
+            document.getElementById("textarea").innerHTML = game.show();
+        </script>
+    </textarea>
 </body>
 </html>

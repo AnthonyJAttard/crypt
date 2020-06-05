@@ -1,8 +1,8 @@
 "use strict";
-//let spacer = require("./spacer");
+// let spacer = require("./spacer");
 // let Place = require("./place");
 
-import {spacer} from "./spacer.js";
+// import {spacer} from "./spacer.js";
 
 let Player = function (name, health) {
     const newLine = spacer.newLine();
@@ -85,11 +85,11 @@ let Player = function (name, health) {
 
     // Show the info for this player
     this.showInfo = function (character) {
-        console.log(getInfo(character));
-        //return getInfo();
+        //console.log(getInfo(character));
+        return getInfo();
     };
 };
 
 // Exports
 // module.exports = Player;
-export {Player};
+// export {Player};

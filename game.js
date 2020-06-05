@@ -1,6 +1,7 @@
 "use strict";
-import {Place} from "./place.js";
-import {Player} from "./player.js";
+// import {spacer} from "./spacer.js";
+// import {Place} from "./place.js";
+// import {Player} from "./player.js";
 
 /**
  * This creates a getGame object that represents the game itself
@@ -75,15 +76,15 @@ let getGame = function() {
             } else {
                 return "*** There is no item to get ***";
             }
-        }
+        },
 
-        // show: function () {
-        //     let infoString;
-        //     let place = player.getPlace();
-        //     infoString = place.showInfo();
-        //     infoString += player.showInfo();
-        //     return infoString;
-        // }
+        show: function () {
+            let infoString;
+            let place = player.getPlace();
+            infoString = place.showInfo();
+            infoString += player.showInfo();
+            return infoString;
+        }
     };
 };
 
