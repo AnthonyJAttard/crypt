@@ -50,7 +50,7 @@ let getGame = function() {
     player.addItem("The Sword of Doom");
     player.setPlace(kitchen);
 
-    render();
+    //render();
 
     return {
         go: function (direction) {
@@ -75,11 +75,20 @@ let getGame = function() {
             } else {
                 return "*** There is no item to get ***";
             }
+        },
+
+        show: function () {
+            let infoString;
+            let place = player.getPlace();
+            infoString = place.showInfo();
+            infoString += player.showInfo();
+            return infoString;
         }
     };
 };
 
 let game = getGame();
+document.getElementById("textarea").innerHTML = game.show();
 // game.get();
 // game.go("south");
 // game.go("north");
