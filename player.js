@@ -84,9 +84,9 @@ let Player = function (name, health) {
     };
 
     // Show the info for this player
-    this.showInfo = function (character) {
+    this.showInfo = function () {
         // console.log(getInfo(character));
-        return getInfo(character);
+        return getInfo();
     };
 };
 
