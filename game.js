@@ -80,6 +80,6 @@ let getGame = function() {
 };
 
 let game = getGame();
-game.get();
-game.go("south");
-game.go("north");
+// game.get();
+// game.go("south");
+// game.go("north");
