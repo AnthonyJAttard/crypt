@@ -1,4 +1,8 @@
 "use strict";
+/***
+ * Spacer text library
+ * @type {{blank: (function(): string), newLine: (function(): string), line: (function(number, string): string), box: (function(*=, *=, *=): string), line2: (function(*, *): string), wrap: (function(*, *, *): string)}}
+ */
 let spacer = {
 
     blank: function () {
