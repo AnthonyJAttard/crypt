@@ -1,9 +1,16 @@
 "use strict";
 // let spacer = require("./spacer");
 // let Place = require("./place");
-
 // import {spacer} from "./spacer.js";
+
 (function () {
+    /**
+     * The player object
+     * - built using name and health
+     * @param name
+     * @param health
+     * @constructor
+     */
     let Player = function (name, health) {
         const newLine = spacer.newLine();
 
@@ -12,7 +19,10 @@
         let place = null;
         let items = [];
 
-        // Add an item to the array of items
+        /**
+         * Add an item to the array of items
+         * @param item
+         */
         this.addItem = function (item) {
             items.push(item);
         };
@@ -32,32 +42,50 @@
         //     }
         // };
 
-        // Attach a place to the place property
+        /**
+         * Attach a place to the place property
+         * @param destination
+         */
         this.setPlace = function (destination) {
             place = destination;
         }
 
-        // Return the players place
+        /**
+         * Return the players place
+         * @returns {null}
+         */
         this.getPlace = function () {
             return place;
         };
 
-        // Return the players name
+        /**
+         * Return the players name
+         * @returns {*}
+         */
         let getNameInfo = function () {
             return name;
         };
 
-        // Return the players health
+        /**
+         * Return the players health
+         * @returns {string}
+         */
         let getHealthInfo = function () {
             return `(${health})`;
         };
 
-        // Return the players title = name and health
+        /**
+         * Return the players title = name and health
+         * @returns {string}
+         */
         let getTitleInfo = function () {
             return `${getNameInfo()} ${getHealthInfo()}`
         };
 
-        // Return the players items - as a string
+        /**
+         * Return the players items - as a string
+         * @returns {string}
+         */
         let getItemsInfo = function () {
             let itemsString = "Items:" + newLine;
 
@@ -73,7 +101,10 @@
             return itemsString;
         };
 
-        // Format the players info as a string
+        /**
+         * Format the players info as a string
+         * @returns {string}
+         */
         let getInfo = function () {
             let info = spacer.box(getTitleInfo(), 40, "*");
             info += ` ${getItemsInfo()}`;
@@ -83,7 +114,10 @@
             return info;
         };
 
-        // Show the info for this player
+        /**
+         * Show the info for this player
+         * @param character
+         */
         this.showInfo = function (character) {
             console.log(getInfo(character));
             // return getInfo();

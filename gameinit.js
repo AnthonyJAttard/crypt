@@ -8,25 +8,47 @@
 // Game initialization and controls
 
 (function () {
-
+    /**
+     * The Game object controls the game itself
+     * @returns {{get: get, go: go}}
+     */
     let getGame = function () {
 
+        /**
+         * Render the information regarding the
+         * player and the place it's in
+         */
         let render = function () {
             console.clear();
             player.getPlace().showInfo();
             player.showInfo();
         };
 
-        let firstPlace = theCrypt.buildMap();
+        /**
+         * Create the first place the player is in
+         * @type {*}
+         */
+        let firstPlace = theCrypt.buildMap(theCrypt.mapData);
 
+        /**
+         * Assign the player to the place and
+         * add the items and place they are in
+         * @type {Player}
+         */
         let player = new theCrypt.Player("Kandra", 50);
         player.addItem("The Sword of Doom");
         player.setPlace(firstPlace);
 
+        // Display the data
         render();
 
         // Return the public interface
         return {
+            /**
+             * Go the place described by the direction
+             * @param direction
+             * @returns {string}
+             */
             go: function (direction) {
                 let place = player.getPlace();
                 let destination = place.getExit(direction);
@@ -40,6 +62,11 @@
                 }
             },
 
+            /**
+             * Get the item stored in the place and
+             * add it to the players items.
+             * @returns {string}
+             */
             get: function () {
                 let place = player.getPlace();
                 let item = place.getLastItem();
@@ -53,7 +80,6 @@
                 }
             }
         };
-
     };
 
     if (window.theCrypt === undefined) {

@@ -4,7 +4,6 @@
  */
 
 (function () {
-
     let mapData = {
         "title": "The Dark House",
         "firstPlace": "The Kitchen",
