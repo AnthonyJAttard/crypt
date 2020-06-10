@@ -15,16 +15,6 @@
     let getGame = function () {
 
         /**
-         * Render the information regarding the
-         * player and the place it's in
-         */
-        let render = function () {
-            console.clear();
-            player.getPlace().showInfo();
-            player.showInfo();
-        };
-
-        /**
          * Create the first place the player is in
          * @type {*}
          */
@@ -38,6 +28,16 @@
         let player = new theCrypt.Player("Kandra", 50);
         player.addItem("The Sword of Doom");
         player.setPlace(firstPlace);
+
+        /**
+         * Render the information regarding the
+         * player and the place it's in
+         */
+        let render = function () {
+            console.clear();
+            //player.getPlace().showInfo();
+            playerView.render(player);
+        };
 
         // Display the data
         render();

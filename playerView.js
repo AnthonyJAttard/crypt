@@ -72,12 +72,12 @@
         // return getInfo();
     };
 
-    if (window.playerDataView === undefined) {
-        window.playerDataView = {};
+    if (window.playerView === undefined) {
+        window.playerView = {};
     }
 
-    theCrypt.playerDataView = {
+    theCrypt.playerView = {
         render: render
     };
-    
+
 })();
