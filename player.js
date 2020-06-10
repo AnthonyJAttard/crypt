@@ -12,8 +12,6 @@
      * @constructor
      */
     let Player = function (name, health) {
-        const newLine = spacer.newLine();
-
         // These are no private and can only be accessed through
         // public functions
         let place = null;
@@ -34,13 +32,25 @@
         //     }, this);
         // };
 
-        // Remove an item from the array of items
-        // this.removeItem = function (item) {
-        //     let index = this.items.indexOf(item);
-        //     if (index > -1) {
-        //         this.items.splice(index, 1);
-        //     }
-        // };
+        /**
+         * Check if an item is in the array of items.
+         * @param item
+         * @returns {boolean}
+         */
+        this.hasItem = function (item) {
+            // This test needs to be checked for correctness
+            return items.indexOf(item) !== -1;
+        }
+        /**
+         * Remove an item from the array of items
+         * @param item
+         */
+        this.removeItem = function (item) {
+            let itemIndex = this.items.indexOf(item);
+            if (itemIndex > -1) {
+                this.items.splice(itemIndex, 1);
+            }
+        };
 
         /**
          * Attach a place to the place property
@@ -52,76 +62,36 @@
 
         /**
          * Return the players place
-         * @returns {null}
+         * @returns {Place}
          */
         this.getPlace = function () {
             return place;
         };
 
         /**
-         * Return the players name
-         * @returns {*}
+         * Applies damage to player health
+         * @param damage
          */
-        let getNameInfo = function () {
-            return name;
-        };
+        this.applyDamage = function (damage) {
+            health -= damage;
+        }
 
         /**
-         * Return the players health
-         * @returns {string}
+         * Returns a data string or object
+         * @returns {object}
          */
-        let getHealthInfo = function () {
-            return `(${health})`;
-        };
+        this.getData = function () {
+            let data = {
+                "name": name,
+                "health": health,
+                "items": items,
+            };
 
-        /**
-         * Return the players title = name and health
-         * @returns {string}
-         */
-        let getTitleInfo = function () {
-            return `${getNameInfo()} ${getHealthInfo()}`
-        };
-
-        /**
-         * Return the players items - as a string
-         * @returns {string}
-         */
-        let getItemsInfo = function () {
-            let itemsString = "Items:" + newLine;
-
-            if (items.length > 0) {
-                items.forEach(function (item,/* i*/) {
-                    itemsString += `\t- ${item}${newLine}`;
-                    // itemsString += newLine;
-                }/*, this */);
-            } else {
-                itemsString = "You have no items." + newLine;
+            if (place !== null) {
+                data.place = place.title;
             }
-
-            return itemsString;
-        };
-
-        /**
-         * Format the players info as a string
-         * @returns {string}
-         */
-        let getInfo = function () {
-            let info = spacer.box(getTitleInfo(), 40, "*");
-            info += ` ${getItemsInfo()}`;
-            info += spacer.line(40, "*");
-            info += newLine;
-
-            return info;
-        };
-
-        /**
-         * Show the info for this player
-         * @param character
-         */
-        this.showInfo = function (character) {
-            console.log(getInfo(character));
-            // return getInfo();
-        };
+            return data;
+        }
     };
 
     if (window.theCrypt === undefined) {

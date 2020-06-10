@@ -112,7 +112,7 @@
         /**
          * Get the exit from the direction
          * @param direction
-         * @returns {*}
+         * @returns {Place}
          */
         this.getExit = function (direction) {
             return exits[direction];
@@ -120,7 +120,7 @@
 
         /**
          * Get the last item in the array of items
-         * @returns {*}
+         * @returns {string}
          */
         this.getLastItem = function () {
             return items.pop();
@@ -139,7 +139,7 @@
         /**
          * Get the challenge for the place
          * @param direction
-         * @returns {*}
+         * @returns {Array}
          */
         this.getChallenge = function (direction) {
             return challenges[direction];
