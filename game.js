@@ -1,6 +1,14 @@
 "use strict";
 /**
  * Create the game object
- * @type {{get: get, go: go}}
- */
-let game = theCrypt.getGame();
+ * */
+
+let playerData = {
+    "name": "Anthony",
+    "health": 50,
+    "items":  [
+        "a rusty key"
+    ]
+}
+
+let game = theCrypt.init(theCrypt.mapData, playerData);
