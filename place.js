@@ -4,7 +4,6 @@
 
 (function () {
     let Place = function Place(title, description) {
-        const newLine = spacer.newLine();
 
         // Properties of a Place
         let items = [];
@@ -14,68 +13,6 @@
         // exits is an uninitialised object for value -> pair
         // direction -> exit
         // "north" -> "kitchen"
-
-        /**
-         * Return the items in this place
-         * @returns {string}
-         */
-        let getItemsInfo = function () {
-            let itemsString = `Items: ${newLine}`;
-
-            if (items.length > 0) {
-                items.forEach(function (item) {
-                    itemsString += `\t- ${item}${newLine}`;
-                });
-            } else {
-                itemsString = "There are no items here." + newLine;
-            }
-
-            return itemsString;
-        };
-
-        /**
-         * Return the exits from this place
-         * @returns {string}
-         */
-        let getExitsInfo = function () {
-            let exitsString = `Exits from ${title}:${newLine}`;
-
-            Object.keys(exits).forEach(function (key) {
-                exitsString += `\t- ${key}${newLine}`;
-            });
-
-            return exitsString;
-        };
-
-        /**
-         * Return the name of this place
-         * @returns {string}
-         */
-        let getTitleInfo = function () {
-            return spacer.box(title, 40, '=');
-        };
-
-        /**
-         * Return the information about this place
-         * @returns {string}
-         */
-        let getInfo = function () {
-            let infoString = getTitleInfo();
-            infoString += description + newLine + newLine;
-            infoString += getItemsInfo() + newLine;
-            infoString += getExitsInfo();
-            infoString += spacer.line(40, '=') + newLine;
-
-            return infoString;
-        };
-
-        /**
-         * Display the information to the console
-         */
-        this.showInfo = function () {
-            console.log(getInfo());
-            // return getInfo();
-        };
 
         /**
          * Add an item to the list or items in this place
@@ -144,7 +81,22 @@
         this.getChallenge = function (direction) {
             return challenges[direction];
         };
-    };
+
+        /**
+         * Return a placeData string containing the information
+         * to display about this place
+         * @returns {object}
+         */
+        this.getData = function () {
+            return {
+                "title": title,
+                "description": description,
+                "items": items.slice(),
+                "exits": Object.keys(exits)
+            };
+        };
+
+    }; // end of Place()
 
     if (window.theCrypt === undefined) {
         window.theCrypt = {};

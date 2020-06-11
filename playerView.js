@@ -68,7 +68,7 @@
      * Show the info for this player
      */
     let render = function (player) {
-        console.log(player.getData());
+        console.log(getInfo(player.getData()));
         // return getInfo();
     };
 
