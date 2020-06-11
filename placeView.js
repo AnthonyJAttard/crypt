@@ -69,6 +69,8 @@
         window.placeView = {};
     }
 
-    window.placeView = render;
+    theCrypt.placeView = {
+        render: render
+    };
 
 })();
