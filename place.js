@@ -88,12 +88,14 @@
          * @returns {object}
          */
         this.getData = function () {
-            return {
+            let data = {
                 "title": title,
                 "description": description,
                 "items": items.slice(),
                 "exits": Object.keys(exits)
             };
+
+            return data;
         };
 
     }; // end of Place()

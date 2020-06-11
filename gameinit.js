@@ -35,12 +35,12 @@
          */
         let render = function () {
             console.clear();
-            placeView.render(firstPlace);
-            playerView.render(player);
+            // placeView.render(firstPlace);
+            // playerView.render(player);
         };
 
         // Display the data
-        render();
+        // render();
 
         // Return the public interface
         return {

@@ -55,7 +55,7 @@
      * Format the player info as a string
      * @returns {string}
      */
-    this.getInfo = function (playerData) {
+    let getInfo = function (playerData) {
         let info = spacer.box(getTitleInfo(playerData), 40, "*");
         info += ` ${getItemsInfo(playerData)}`;
         info += spacer.line(40, "*");
