@@ -4,7 +4,7 @@
     /**
      * buildMap
      * Creates a map for the game using
-     * mapData object (see map_data.js)*
+     * mapData object (see mapData.js)*
      * @param mapData
      * @returns {*}
      */
