@@ -35,8 +35,8 @@
          */
         let render = function () {
             console.clear();
-            player.getPlace().showInfo();
-            //theCrypt.playerView.render(player);
+            placeView.render(firstPlace);
+            playerView.render(player);
         };
 
         // Display the data
