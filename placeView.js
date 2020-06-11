@@ -48,7 +48,7 @@
      * @returns {string}
      */
     let getInfo = function (placeData) {
-        let infoString = getTitleInfo(placeData.name);
+        let infoString = getTitleInfo(placeData);
         infoString += placeData.description + newLine + newLine;
         infoString += getItemsInfo(placeData) + newLine;
         infoString += getExitsInfo(placeData);
