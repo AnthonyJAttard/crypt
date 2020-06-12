@@ -12,4 +12,4 @@
 // }
 
 console.log("Loading The Crypt...");
-let game = theCrypt.init(theCrypt.mapData, "Anthony");
+game.init(theCrypt.mapData, "Anthony");
