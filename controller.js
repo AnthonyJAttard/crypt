@@ -28,6 +28,7 @@
          * add the items and place they are in
          */
         player = new theCrypt.Player(playerName, 50);
+        player.addItem("The Sword of Doom");
         player.setPlace(firstPlace);
 
         inPlay = true;
