@@ -10,8 +10,8 @@
      */
     let buildMap = function (mapData) {
         /**
-         * FOr storing the places in the map
-         * @type {{}}
+         * For storing the places in the map
+         * @type {object}
          */
         let placesStore = {};
 

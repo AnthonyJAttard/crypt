@@ -20,7 +20,7 @@
                         "challenge": {
                             "message": "A zombie sinks its teeth into your neck.",
                             "success": "The zombie disintegrates into a puddle of goo.",
-                            "failure": "The zombie is strangely resistent.",
+                            "failure": "The zombie is strangely resilient.",
                             "requires": "holy water",
                             "itemConsumed": true,
                             "damage": 20
